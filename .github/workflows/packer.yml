@@ -34,11 +34,11 @@ jobs:
 
       # zip artifact
       - name: Zip Artifact
-        run: zip -r rpi-crust.zip output-raspbian/image 
+        run: zip rpi-crust-arm64.img output-raspbian/image 
 
       # archive artifact
       - name: Archive Artifact
         uses: actions/upload-artifact@v2
         with:
           name: Crust
-          path: rpi-crust.zip
+          path: rpi-crust-arm64.img
