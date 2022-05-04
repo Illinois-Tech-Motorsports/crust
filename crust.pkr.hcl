@@ -24,4 +24,9 @@ build {
     source = "./scripts/.bash_profile"
     destination = "/home/pi/.bash_profile"
   }
+
+  provisioner "file" {
+    source = "./scripts/cmdline.txt"
+    destination = "/boot/cmdline.txt"
+  }
 }
