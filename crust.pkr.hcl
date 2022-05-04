@@ -29,4 +29,9 @@ build {
     source = "./scripts/cmdline.txt"
     destination = "/boot/cmdline.txt"
   }
+
+  provisioner "file" {
+    source = "./scripts/config.txt"
+    destination = "/boot/config.txt"
+  }
 }
