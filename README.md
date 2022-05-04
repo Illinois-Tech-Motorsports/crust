@@ -9,7 +9,7 @@
   <br/><br/>
 </p>
 
-[![](https://img.shields.io/github/license/illinois-tech-motorsports/dashy)](https://github.com/illinois-tech-motorsports/dashy/blob/main/LICENSE)
+[![](https://img.shields.io/github/license/illinois-tech-motorsports/crust)](https://github.com/illinois-tech-motorsports/crust/blob/main/LICENSE)
 </div>
 
 ## Download
