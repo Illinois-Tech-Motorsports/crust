@@ -1,12 +1,12 @@
-name: Packer
+name: build
 
 on:
   push:
 
 jobs:
-  packer:
+  build:
     runs-on: ubuntu-latest
-    name: packer
+    name: build
 
     steps:
       - name: Checkout Repository
@@ -31,14 +31,3 @@ jobs:
       # build artifact
       - name: Build Artifact
         run: sudo packer build crust.pkr.hcl
-
-      # zip artifact
-      - name: Zip Artifact
-        run: zip rpi-crust-arm64.img output-raspbian/image 
-
-      # archive artifact
-      - name: Archive Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: Crust
-          path: rpi-crust-arm64.img
