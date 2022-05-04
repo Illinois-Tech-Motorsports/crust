@@ -19,4 +19,9 @@ build {
    provisioner "shell" {
     script = "./scripts/services.sh"
   }
+
+  provisioner "file" {
+    source = "./scripts/.bash_profile"
+    destination = "/home/pi/.bash_profile"
+  }
 }
