@@ -17,9 +17,6 @@ build {
   sources = ["source.arm-image.raspbian"]
 
    provisioner "shell" {
-    inline = [
-      "chmod + x scripts/services.sh",
-      "scripts/services.sh"
-    ]
+    script = "./scripts/services.sh"
   }
 }
