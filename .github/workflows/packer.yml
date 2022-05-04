@@ -19,14 +19,14 @@ jobs:
       # tool installation
       - name: Install Tools
         run: sudo apt update && sudo apt install git wget zip unzip build-essential kpartx qemu binfmt-support qemu-user-static e2fsprogs dosfstools
+     
+      # init project
+      - name: Init Project
+        run: packer init crust.pkr.hcl
 
       # validate templates
       - name: Validate Template
         run: packer validate crust.pkr.hcl
-
-      # init project
-      - name: Init Project
-        run: packer init crust.pkr.hcl
 
       # build artifact
       - name: Build Artifact
