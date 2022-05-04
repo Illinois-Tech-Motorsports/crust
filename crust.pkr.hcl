@@ -18,7 +18,8 @@ build {
 
    provisioner "shell" {
     inline = [
-      "./scripts/services.sh",
+      "chmod + x scripts/services.sh",
+      "scripts/services.sh"
     ]
   }
 }
