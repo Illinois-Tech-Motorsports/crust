@@ -30,7 +30,7 @@ jobs:
 
       # build artifact
       - name: Build Artifact
-        run: packer build crust.pkr.hcl
+        run: sudo packer build crust.pkr.hcl
 
       # zip artifact
       - name: Zip Artifact
