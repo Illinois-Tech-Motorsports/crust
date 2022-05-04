@@ -1,0 +1,11 @@
+# Cache objects
+packer-builder-arm-image
+output-arm-image
+output-raspbian/
+packer_cache/
+
+# Crash log
+crash.log
+
+# For built boxes
+*.box
