@@ -47,6 +47,4 @@ jobs:
           upload_url: ${{ github.event.release.upload_url }} 
           asset_path: rpi-crust-arm64.img
           asset_name: rpi-crust-arm64.img
-          asset_label: image
           asset_content_type: application/octet-stream
-
