@@ -12,34 +12,33 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+      # packer installation
+      - name: Install Packer
+        run: curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - && sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" && sudo apt-get update && sudo apt-get install packer
+
+      # tool installation
+      - name: Install Tools
+        run: sudo apt update && sudo apt install git wget zip unzip build-essential kpartx qemu binfmt-support qemu-user-static e2fsprogs dosfstools
+
       # validate templates
       - name: Validate Template
-        uses: hashicorp/packer-github-actions@master
-        with:
-          command: validate
-          arguments: -syntax-only
-          target: crust.pkr.hcl
+        run: packer validate crust.pkr.hcl
 
       # init project
       - name: Init Project
-        uses: hashicorp/packer-github-actions@master
-        with:
-          command: init
-          target: crust.pkr.hcl
+        run: packer init crust.pkr.hcl
 
       # build artifact
       - name: Build Artifact
-        uses: hashicorp/packer-github-actions@master
-        with:
-          command: build
-          arguments: "-color=false -on-error=abort"
-          target: crust.pkr.hcl
-        env:
-          PACKER_LOG: 1
+        run: packer build crust.pkr.hcl
+
+      # zip artifact
+      - name: Zip Artifact
+        run: zip -r rpi-crust.zip output-raspbian/image 
 
       # archive artifact
       - name: Archive Artifact
         uses: actions/upload-artifact@v2
         with:
           name: Crust
-          path: output-raspbian/image
+          path: rpi-crust.zip
