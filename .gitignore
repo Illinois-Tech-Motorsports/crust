@@ -1,8 +1,7 @@
 # Cache objects
-packer-builder-arm-image
-output-arm-image
-output-raspbian/
-packer_cache/
+buildroot
+
+.gitignore
 
 # Crash log
 crash.log
