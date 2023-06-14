@@ -39,3 +39,5 @@ disable_splash=1
 dtoverlay=disable-bt
 boot_delay=0
 
+force_eeprom_read=0
+disable_poe_fan=1
