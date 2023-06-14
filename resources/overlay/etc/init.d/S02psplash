@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 NAME=psplash
 DAEMON=/usr/bin/$NAME

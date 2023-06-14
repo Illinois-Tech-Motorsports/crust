@@ -73,13 +73,14 @@ fi
 header "Installing buildroot"
 
 # Use -N to skip downloads, use -L to skip downloads and clean recompile kernel
-if [ "$#" -eq 0 ] || [ "$1" != "-N" ] && [ "$1" != "-L" ]; then
+if [ -d "buildroot" ]  && [ "$1" != "-R" ]; then
+    warn "Buildroot already installed. Run with flag '-R' to reinstall buildroot."
+else
+    if [ -d "buildroot" ]; then
+        rm -rf buildroot
+    fi
     git clone git://git.buildroot.org/buildroot
     mv buildroot* buildroot
-    wget -q --show-progress https://github.com/raspberrypi/firmware/raw/master/boot/bcm2711-rpi-cm4.dtb -P buildroot/output/images/
-    wget -q --show-progress https://github.com/raspberrypi/firmware/raw/master/boot/bootcode.bin -P buildroot/output/images/
-    wget -q --show-progress https://github.com/raspberrypi/firmware/raw/master/boot/start4.elf -P buildroot/output/images/
-    wget -q --show-progress https://github.com/raspberrypi/firmware/raw/master/boot/fixup4.dat -P buildroot/output/images/
 fi
 
 header "Setting buildroot crust configuration"
