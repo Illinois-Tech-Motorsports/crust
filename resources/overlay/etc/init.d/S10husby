@@ -14,6 +14,8 @@ case "$1" in
         /usr/bin/psplash-write "PROGRESS 90"
         sleep 1
         /usr/bin/psplash-write "PROGRESS 100"
+        sleep 1
+        /usr/bin/psplash-write "QUIT"
         ;;
     stop)
         exit 1
