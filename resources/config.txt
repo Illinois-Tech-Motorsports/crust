@@ -43,3 +43,5 @@ force_eeprom_read=0
 disable_poe_fan=1
 
 hdmi_cvt=1920 515 30 6 0 0 0
+hdmi_group=2
+hdmi_mode=87
