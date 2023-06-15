@@ -1,5 +1,5 @@
---- psplash-config.h.orig
-+++ psplash-config.h
+--- a/psplash-config.h
++++ b/psplash-config.h
 @@ -22,9 +22,7 @@
  #endif
  
