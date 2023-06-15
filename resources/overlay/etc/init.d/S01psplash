@@ -7,7 +7,7 @@ test -x $DAEMON || exit 0
 
 case "$1" in
     start)
-        $DAEMON  --no-progress > /dev/null 2>&1 &
+        $DAEMON > /dev/null 2>&1 &
         ;;
     stop)
         killall -q $NAME
